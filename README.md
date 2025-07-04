@@ -41,15 +41,17 @@ From the heatmap, it can be seen that the four variables `storage_issue_reported
 ## Methodology
 
 ### Regression
-- Used a correlation Heatmap to determine significant features affecting product weight
-- Built a linear regression model using `sklearn`
-- Used features like:
-  - `storage_issue_reported_l3m`
-  - `wh_est_year`
-  - `wh_breakdown_l3m`
-  - `transport_issue_l1y`
-- Achieved an **R² score of 0.969**
-- Validated with MAE and residual plots
+
+Using the most relevant four features, a linear regression model using `sklearn` with a 80:20 ratio of training:test data. The prediction from the regression model gave the following error scores:
+
+- Mean Absolute Error : 1527.79
+- Root Mean Squared Error : 2058.13
+- R² Score : 0.9694
+
+The residual from the regression model was plotted
+
+![Residual plot](Plots/Regression-residual-plot)
+
 
 ### Optimization
 - Used `cvxpy` to solve a constrained optimization problem:
